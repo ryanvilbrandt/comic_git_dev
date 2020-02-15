@@ -4,6 +4,7 @@ import re
 import shutil
 from configparser import RawConfigParser
 from glob import glob
+from json import dumps
 from time import strptime
 from typing import Dict, List
 
@@ -100,7 +101,7 @@ def create_comic(comic_info: RawConfigParser, page_info: dict,
     }
 
 
-def write_comics(comic_info: RawConfigParser, page_info_list: List[Dict]):
+def write_comic_pages(comic_info: RawConfigParser, page_info_list: List[Dict]):
     # Write individual comic pages
     comic_template = JINJA_ENVIRONMENT.get_template("comic.tpl")
     for i, page_info in enumerate(page_info_list):
@@ -126,8 +127,11 @@ def main():
     # Get the info for all pages, sorted by Post Date
     page_info_list = get_page_info_list(comic_info.get("Comic Settings", "Date format"))
     print([p["page_name"] for p in page_info_list])
+    # Save page_info_list.json file for use by other pages
+    with open("comic/page_info_list.json", "w") as f:
+        f.write(dumps(page_info_list))
     # Write page info to comic HTML pages
-    write_comics(comic_info, page_info_list)
+    write_comic_pages(comic_info, page_info_list)
 
 
 if __name__ == "__main__":
