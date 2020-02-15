@@ -5,43 +5,53 @@
     <link rel="stylesheet" type="text/css" href="../src/css/style.css">
     <link rel="stylesheet" type="text/css" href="../your_content/colors_and_layout/your_stylesheet.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <title>{page_title}</title>
+    <title>{{ page_title }}</title>
 </head>
 <body>
 <div id="container">
     <div id="banner"><img id="banner-img" src="../your_content/images/banner.png"></div>
-    <div id="links-bar">{links_bar}</div>
+    <div id="links-bar">
+        {% for link in links %}
+            <a class="link-bar-link" href="{{ link.url }}">{{ link.name }}</a>
+            {% if not loop.last %}&nbsp;&nbsp;|&nbsp;&nbsp;{% endif %}
+        {% endfor %}
+    </div>
 
     <div id="comic-page">
-        <a href="comic/{next_id}.html"><img id="comic-image" src="{comic_path}" title="{alt_text}"/></a>
+        <a href="comic/{{ next_id }}.html"><img id="comic-image" src="{{ comic_path }}" title="{{ alt_text }}"/></a>
     </div>
 
     <div id="navigation-bar">
         <table id="navigation-buttons">
             <tr>
                 <td id="navigation-button-first">
-                    <a class="navigation-button" href="{first_id}.html">First</a>
+                    <a class="navigation-button" href="{{ first_id }}.html">First</a>
                 </td>
                 <td id="navigation-button-previous">
-                    <a class="navigation-button" href="{previous_id}.html">Previous</a>
+                    <a class="navigation-button" href="{{ previous_id }}.html">Previous</a>
                 </td>
                 <td id="navigation-button-next">
-                    <a class="navigation-button" href="{next_id}.html">Next</a>
+                    <a class="navigation-button" href="{{ next_id }}.html">Next</a>
                 </td>
                 <td id="navigation-button-last">
-                    <a class="navigation-button" href="{last_id}.html">Last</a>
+                    <a class="navigation-button" href="{{ last_id }}.html">Last</a>
                 </td>
             </tr>
         </table>
     </div>
 
     <div id="blurb">
-        <h1 id="comic-title">{comic_title}</h1>
-        <div id="post-date">Posted on: {post_date}</div>
-        <div id="tags">Tags: {tags}</div>
+        <h1 id="comic-title">{{ comic_title }}</h1>
+        <div id="post-date">Posted on: {{ post_date }}</div>
+        <div id="tags">
+            Tags:
+            {% for tag in tags %}
+                <a class="tag-link" href="tagged.html?={{ tag }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+            {% endfor %}
+        </div>
         <hr id="post-body-break">
         <div id="post-body">
-            {post_html}
+            {{ post_html }}
         </div>
     </div>
 

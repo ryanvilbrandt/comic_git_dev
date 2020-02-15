@@ -7,6 +7,12 @@ from glob import glob
 from time import strptime
 from typing import Dict, List
 
+from jinja2 import Environment, PackageLoader, FileSystemLoader, Template
+
+JINJA_ENVIRONMENT = Environment(
+    loader=FileSystemLoader("src/templates")
+)
+
 
 def read_info(filepath):
     with open(filepath) as f:
@@ -43,17 +49,11 @@ def get_ids(comic_list: List, index):
     }
 
 
-def build_links_bar(comic_info: RawConfigParser):
+def get_links_list(comic_info: RawConfigParser):
     link_list = []
     for option in comic_info.options("Links Bar"):
-        link_list.append('<a class="link-bar-link" href="{}">{}</a>'.format(
-            comic_info.get("Links Bar", option), option)
-        )
-    return "&nbsp;&nbsp;|&nbsp;&nbsp;".join(link_list)
-
-
-def tagged_link(tag):
-    return f'<a href="tagged.html?={}"'
+        link_list.append({"name": option, "url": comic_info.get("Links Bar", option)})
+    return link_list
 
 
 def create_comic(comic_info: RawConfigParser, page, page_info, first_id, previous_id, next_id, last_id):
@@ -62,7 +62,7 @@ def create_comic(comic_info: RawConfigParser, page, page_info, first_id, previou
         post_html = f.read().decode("utf-8")
     return {
         "page_title": page_info.get("nosection", "Title") + " - " + comic_info.get("Comic Settings", "Comic name"),
-        "links_bar": build_links_bar(comic_info),
+        "links": get_links_list(comic_info),
         "comic_path": "../your_content/comics/{}/{}".format(page, page_info.get("nosection", "Filename")),
         "alt_text": html.escape(page_info.get("nosection", "Alt text")),
         "first_id": first_id,
@@ -71,17 +71,16 @@ def create_comic(comic_info: RawConfigParser, page, page_info, first_id, previou
         "last_id": last_id,
         "comic_title": page_info.get("nosection", "Title"),
         "post_date": page_info.get("nosection", "Post date"),
-        "tags": page_info.get("nosection", "Tags"),
+        "tags": [tag.strip() for tag in page_info.get("nosection", "Tags").strip().split(",")],
         "post_html": post_html
     }
 
 
 def write_comics(comics: Dict[str, Dict]):
-    with open("src/templates/comic.html") as f:
-        comic_template = f.read()
+    comic_template = JINJA_ENVIRONMENT.get_template("comic.tpl")
     for page_name, comic_dict in comics.items():
         with open("comic/{}.html".format(page_name), "wb") as f:
-            f.write(bytes(comic_template.format(**comic_dict), "utf-8"))
+            f.write(bytes(comic_template.render(**comic_dict), "utf-8"))
 
 
 def main():
