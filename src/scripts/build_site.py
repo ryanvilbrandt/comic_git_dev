@@ -15,11 +15,15 @@ JINJA_ENVIRONMENT = Environment(
 )
 
 
-def setup_output_file_space():
-    # Clean workspace, i.e. delete old files
+def delete_output_file_space():
     shutil.rmtree("comic", ignore_errors=True)
     if os.path.isfile("index.html"):
         os.remove("index.html")
+
+
+def setup_output_file_space():
+    # Clean workspace, i.e. delete old files
+    delete_output_file_space()
     # Create directories if needed
     os.makedirs("comic", exist_ok=True)
 
