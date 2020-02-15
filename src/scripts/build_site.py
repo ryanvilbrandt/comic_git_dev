@@ -1,6 +1,7 @@
 import html
 import os
 import re
+import shutil
 from configparser import RawConfigParser
 from glob import glob
 from time import strptime
@@ -13,11 +14,20 @@ JINJA_ENVIRONMENT = Environment(
 )
 
 
+def setup_output_file_space():
+    # Clean workspace, i.e. delete old files
+    shutil.rmtree("comic", ignore_errors=True)
+    if os.path.isfile("index.html"):
+        os.remove("index.html")
+    # Create directories if needed
+    os.makedirs("comic", exist_ok=True)
+
+
 def read_info(filepath, to_dict=False):
     with open(filepath) as f:
         info_string = f.read()
     if not re.search("^\[.*?\]", info_string):
-        print(filepath + " has no section")
+        # print(filepath + " has no section")
         info_string = "[DEFAULT]\n" + info_string
     info = RawConfigParser()
     info.optionxform = str
@@ -98,7 +108,7 @@ def write_comics(comic_info: RawConfigParser, page_info_list: List[Dict]):
         with open("comic/{}.html".format(page_info["page_name"]), "wb") as f:
             f.write(bytes(comic_template.render(**comic_dict), "utf-8"))
     # Write index redirect HTML page
-    print("Building index page")
+    print("Building index page...")
     index_template = JINJA_ENVIRONMENT.get_template("index.tpl")
     index_dict = {
         "comic_title": comic_info.get("Comic Settings", "Comic name"),
@@ -109,8 +119,8 @@ def write_comics(comic_info: RawConfigParser, page_info_list: List[Dict]):
 
 
 def main():
-    # Build the output directories
-    os.makedirs("comic", exist_ok=True)
+    # Setup output file space
+    setup_output_file_space()
     # Get site-wide settings for this comic
     comic_info = read_info("your_content/comic_info.ini")
     # Get the info for all pages, sorted by Post Date
