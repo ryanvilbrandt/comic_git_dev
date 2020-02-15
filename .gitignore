@@ -24,3 +24,5 @@ node_modules/
 
 .idea/
 venv/
+
+*.pyc

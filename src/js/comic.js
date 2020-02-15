@@ -60,7 +60,7 @@ function load_navigation_bar(directory_list, current_index) {
 }
 
 async function load_comic_title(title) {
-    document.getElementById("comic-title").innerHTML = title;
+    document.getElementById("page-title").innerHTML = title;
     await load_title(title);
 }
 

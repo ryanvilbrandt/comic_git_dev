@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="../src/css/style.css">
     <link rel="stylesheet" type="text/css" href="../your_content/colors_and_layout/your_stylesheet.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <title>{{ page_title }}</title>
+    <title>{{ page_title }} - {{ comic_title }}</title>
 </head>
 <body>
 <div id="container">
@@ -41,7 +41,7 @@
     </div>
 
     <div id="blurb">
-        <h1 id="comic-title">{{ comic_title }}</h1>
+        <h1 id="page-title">{{ page_title }}</h1>
         <div id="post-date">Posted on: {{ post_date }}</div>
         <div id="tags">
             Tags:

@@ -70,10 +70,6 @@ def get_ids(comic_list: List[Dict], index):
     }
 
 
-def get_page_title(comic_info: RawConfigParser, page_info: dict):
-    return page_info["Title"] + " - " + comic_info.get("Comic Settings", "Comic name")
-
-
 def get_links_list(comic_info: RawConfigParser):
     link_list = []
     for option in comic_info.options("Links Bar"):
@@ -87,7 +83,7 @@ def create_comic(comic_info: RawConfigParser, page_info: dict,
     with open("your_content/comics/{}/post.html".format(page_info["page_name"]), "rb") as f:
         post_html = f.read().decode("utf-8")
     return {
-        "page_title": get_page_title(comic_info, page_info),
+        "comic_title": comic_info.get("Comic Settings", "Comic name"),
         "links": get_links_list(comic_info),
         "comic_path": "../your_content/comics/{}/{}".format(
             page_info["page_name"],
@@ -98,7 +94,7 @@ def create_comic(comic_info: RawConfigParser, page_info: dict,
         "previous_id": previous_id,
         "next_id": next_id,
         "last_id": last_id,
-        "comic_title": page_info["Title"],
+        "page_title": page_info["Title"],
         "post_date": page_info["Post date"],
         "tags": [tag.strip() for tag in page_info["Tags"].strip().split(",")],
         "post_html": post_html

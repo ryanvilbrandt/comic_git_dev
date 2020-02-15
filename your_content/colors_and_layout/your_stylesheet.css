@@ -48,7 +48,7 @@ div#blurb {
     border-right: 3px dotted lightslategray;
 }
 
-h1#comic-title {
+h1#page-title {
     color: maroon;  /* Color of the post title */
     font-size: 24pt;  /* Font size of the post title */
 }
