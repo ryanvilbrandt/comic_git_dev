@@ -78,26 +78,6 @@ export function find_get_parameter(parameter_name) {
     return result;
 }
 
-export function new_lines_to_array(s) {
-    if (s === "")
-        return [];
-    return s.trim().split('\n').map(x => x.trim());
-}
-
-export async function load_links_bar() {
-    let response = await fetch("links_bar.html");
-    if (!response.ok) {
-        console.log("Error when fetching " + response.url + ": " + response.status + " " + response.statusText);
-        return;
-    }
-    document.getElementById("links-bar").innerHTML = await response.text();
-}
-
-export async function load_title(page_title) {
-    let response = await fetch("./your_content/comic_info.json");
-    document.title = page_title + " - " + (await response.json())["name"];
-}
-
 export function init_accordions() {
     let acc = document.getElementsByClassName("accordion-button");
     for (let i = 0; i < acc.length; i++) {
