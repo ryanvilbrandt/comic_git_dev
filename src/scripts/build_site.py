@@ -13,6 +13,7 @@ from jinja2 import Environment, FileSystemLoader
 JINJA_ENVIRONMENT = Environment(
     loader=FileSystemLoader("src/templates")
 )
+COMIC_TITLE = ""
 BASE_DIRECTORY = os.path.basename(os.getcwd())
 LINKS_LIST = []
 
@@ -93,7 +94,6 @@ def create_comic_data(comic_info: RawConfigParser, page_info: dict,
         post_html = f.read().decode("utf-8")
     return {
         "page_name": page_info["page_name"],
-        "comic_title": comic_info.get("Comic Settings", "Comic name"),
         "comic_path": "../your_content/comics/{}/{}".format(
             page_info["page_name"],
             page_info["Filename"]
@@ -122,6 +122,7 @@ def write_to_template(template_path, html_path, data_dict):
     template = JINJA_ENVIRONMENT.get_template(template_path)
     with open(html_path, "wb") as f:
         rendered_template = template.render(
+            comic_title=COMIC_TITLE,
             base_dir=BASE_DIRECTORY,
             links=LINKS_LIST,
             **data_dict
@@ -138,7 +139,6 @@ def write_comic_pages(comic_data_dicts: List[Dict], create_index_file=True):
         # Write index redirect HTML page
         print("Building index page...")
         index_dict = {
-            "comic_title": comic_data_dicts[-1]["comic_title"],
             "last_id": comic_data_dicts[-1]["page_name"]
         }
         write_to_template("index.tpl", "index.html", index_dict)
@@ -155,15 +155,16 @@ def write_archive_page(comic_info: RawConfigParser, comic_data_dicts: List[Dict]
             "name": section,
             "pages": pages
         })
-    write_to_template("archive.tpl", "archive.html", {"archive_sections": archive_sections})
+    write_to_template("archive.tpl", "archive.html", {"page_title": "Archive", "archive_sections": archive_sections})
 
 
 def main():
-    global LINKS_LIST
+    global COMIC_TITLE, LINKS_LIST
     # Setup output file space
     setup_output_file_space()
     # Get site-wide settings for this comic
     comic_info = read_info("your_content/comic_info.ini")
+    COMIC_TITLE = comic_info.get("Comic Settings", "Comic name")
     LINKS_LIST = get_links_list(comic_info)
     # Get the info for all pages, sorted by Post Date
     page_info_list = get_page_info_list(comic_info.get("Comic Settings", "Date format"))
