@@ -43,7 +43,7 @@ a.navigation-button {
 
 div#blurb {
     background-color: lightgray;  /* The color of the "blurb" box that contains post title, post date, tags, etc. */
-    width: 700px;  /* The maximum width of the blurb box. */
+    max-width: 700px;  /* The maximum width of the blurb box. */
     border-left: 3px dotted lightslategray;  /* If you change the background color of the blurb, play with these two lines or else it will look bad */
     border-right: 3px dotted lightslategray;
 }
