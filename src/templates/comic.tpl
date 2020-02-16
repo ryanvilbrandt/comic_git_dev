@@ -1,23 +1,23 @@
 {% extends "base.tpl" %}
 {% block content %}
     <div id="comic-page">
-        <a href="{{ next_id }}.html"><img id="comic-image" src="{{ comic_path }}" title="{{ alt_text }}"/></a>
+        <a href="{{ next_id }}.html#comic-page"><img id="comic-image" src="{{ comic_path }}" title="{{ alt_text }}"/></a>
     </div>
 
     <div id="navigation-bar">
         <table id="navigation-buttons">
             <tr>
                 <td id="navigation-button-first">
-                    <a class="navigation-button" href="{{ first_id }}.html">First</a>
+                    <a class="navigation-button" href="{{ first_id }}.html#comic-page">First</a>
                 </td>
                 <td id="navigation-button-previous">
-                    <a class="navigation-button" href="{{ previous_id }}.html">Previous</a>
+                    <a class="navigation-button" href="{{ previous_id }}.html#comic-page">Previous</a>
                 </td>
                 <td id="navigation-button-next">
-                    <a class="navigation-button" href="{{ next_id }}.html">Next</a>
+                    <a class="navigation-button" href="{{ next_id }}.html#comic-page">Next</a>
                 </td>
                 <td id="navigation-button-last">
-                    <a class="navigation-button" href="{{ last_id }}.html">Last</a>
+                    <a class="navigation-button" href="{{ last_id }}.html#comic-page">Last</a>
                 </td>
             </tr>
         </table>
