@@ -39,7 +39,7 @@ def get_links_list(comic_info: RawConfigParser):
 
 def delete_output_file_space():
     shutil.rmtree("comic", ignore_errors=True)
-    for f in ["index.html", "archive.html"]:
+    for f in ["index.html", "archive.html", "tagged.html"]:
         if os.path.isfile(f):
             os.remove(f)
 
@@ -73,6 +73,7 @@ def get_page_info_list(date_format: str) -> List[Dict]:
     for page_path in glob("your_content/comics/*"):
         page_info = read_info("{}/info.ini".format(page_path), to_dict=True)
         page_info["page_name"] = os.path.basename(page_path)
+        page_info["Tags"] = [tag.strip() for tag in page_info["Tags"].strip().split(",")]
         page_info_list.append(page_info)
 
     page_info_list = sorted(
@@ -111,7 +112,7 @@ def create_comic_data(comic_info: RawConfigParser, page_info: dict,
         "last_id": last_id,
         "page_title": page_info["Title"],
         "post_date": page_info["Post date"],
-        "tags": [tag.strip() for tag in page_info["Tags"].strip().split(",")],
+        "tags": page_info["Tags"],
         "post_html": post_html
     }
 
@@ -124,7 +125,9 @@ def build_comic_data_dicts(comic_info: RawConfigParser, page_info_list: List[Dic
     return comic_data_dicts
 
 
-def write_to_template(template_path, html_path, data_dict):
+def write_to_template(template_path, html_path, data_dict=None):
+    if data_dict is None:
+        data_dict = {}
     template = JINJA_ENVIRONMENT.get_template(template_path)
     with open(html_path, "wb") as f:
         rendered_template = template.render(
@@ -165,6 +168,11 @@ def write_archive_page(comic_info: RawConfigParser, comic_data_dicts: List[Dict]
     write_to_template("archive.tpl", "archive.html", {"page_title": "Archive", "archive_sections": archive_sections})
 
 
+def write_tagged_page():
+    print("Building tagged page...")
+    write_to_template("tagged.tpl", "tagged.html", {"page_title": "Tagged posts"})
+
+
 def main():
     global COMIC_TITLE, LINKS_LIST
     # Setup output file space
@@ -184,6 +192,7 @@ def main():
     # Write page info to comic HTML pages
     write_comic_pages(comic_data_dicts)
     write_archive_page(comic_info, comic_data_dicts)
+    write_tagged_page()
 
 
 if __name__ == "__main__":

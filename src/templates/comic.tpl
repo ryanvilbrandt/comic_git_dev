@@ -29,8 +29,7 @@
         <div id="tags">
             Tags:
             {% for tag in tags %}
-                <a class="tag-link" href="/{{ base_dir }}/tagged.html?tag={{ tag }}">{{ tag }}</a>
-                {% if not loop.last %}, {% endif %}
+                <a class="tag-link" href="/{{ base_dir }}/tagged.html?tag={{ tag }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
             {% endfor %}
         </div>
         <hr id="post-body-break">

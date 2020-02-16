@@ -27,4 +27,5 @@
     </div>
 </div>
 </body>
+{% block script %}{% endblock %}
 </html>
