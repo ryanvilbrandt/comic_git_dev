@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../src/css/style.css">
-    <link rel="stylesheet" type="text/css" href="../your_content/colors_and_layout/your_stylesheet.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="/{{ base_dir }}/src/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/{{ base_dir }}/your_content/colors_and_layout/your_stylesheet.css">
+    <link rel="icon" href="/{{ base_dir }}/favicon.ico" type="image/x-icon" />
     <title>{{ page_title }} - {{ comic_title }}</title>
 </head>
 <body>
 <div id="container">
-    <div id="banner"><img id="banner-img" src="../your_content/images/banner.png"></div>
+    <div id="banner"><img id="banner-img" src="/{{ base_dir }}/your_content/images/banner.png"></div>
     <div id="links-bar">
         {% for link in links %}
             <a class="link-bar-link" href="{{ link.url }}">{{ link.name }}</a>
@@ -18,7 +18,7 @@
     </div>
 
     <div id="comic-page">
-        <a href="comic/{{ next_id }}.html"><img id="comic-image" src="{{ comic_path }}" title="{{ alt_text }}"/></a>
+        <a href="{{ next_id }}.html"><img id="comic-image" src="{{ comic_path }}" title="{{ alt_text }}"/></a>
     </div>
 
     <div id="navigation-bar">
@@ -46,7 +46,8 @@
         <div id="tags">
             Tags:
             {% for tag in tags %}
-                <a class="tag-link" href="tagged.html?={{ tag }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                <a class="tag-link" href="/{{ base_dir }}/tagged.html?tag={{ tag }}">{{ tag }}</a>
+                {% if not loop.last %}, {% endif %}
             {% endfor %}
         </div>
         <hr id="post-body-break">
