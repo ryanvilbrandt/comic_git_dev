@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends "base.tpl" %}
+{% block head %}
     <meta charset="UTF-8">
     <meta http-equiv = "refresh" content = "0; url = comic/{{ last_id }}.html" />
     <title>Latest Comic - {{ comic_title }}</title>
-</head>
-<body>
+{% endblock %}
+{% block body %}
     <p>Redirecting to comic/{{ last_id }}.html</p>
-</body>
-</html>
+{% endblock %}

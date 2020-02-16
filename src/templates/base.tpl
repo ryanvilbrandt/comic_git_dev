@@ -11,6 +11,7 @@
     {% endblock %}
 </head>
 <body>
+{% block body %}
 <div id="container">
     <div id="banner"><img id="banner-img" src="/{{ base_dir }}/your_content/images/banner.png"></div>
     <div id="links-bar">
@@ -26,6 +27,7 @@
         Powered by <a id="powered-by-link" href="https://github.com/ryanvilbrandt/comic_git">comic_git</a>
     </div>
 </div>
+{% endblock %}
 </body>
 {% block script %}{% endblock %}
 </html>
