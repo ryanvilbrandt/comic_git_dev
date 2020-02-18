@@ -75,14 +75,12 @@ def read_info(filepath, to_dict=False, might_be_scheduled=True):
 
 def schedule_files(folder_path):
     for filepath in glob(folder_path + "/*"):
-        print(filepath)
         if not filepath.endswith(".scheduled"):
             os.rename(filepath, filepath + ".scheduled")
 
 
 def unschedule_files(folder_path):
     for filepath in glob(folder_path + "/*"):
-        print(filepath)
         if filepath.endswith(".scheduled"):
             os.rename(filepath, filepath[:-10])
 
