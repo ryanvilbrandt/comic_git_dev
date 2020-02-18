@@ -95,8 +95,7 @@ def get_page_info_list(date_format: str) -> List[Dict]:
     page_info_list = []
     for page_path in glob("your_content/comics/*"):
         page_info = read_info("{}/info.ini".format(page_path), to_dict=True, might_be_scheduled=True)
-        page_info["post_date_struct"] = strptime(page_info["Post date"], date_format)
-        if page_info["post_date_struct"] > local_time:
+        if strptime(page_info["Post date"], date_format) > local_time:
             # Post date is in the future, so mark all the files as .scheduled so they don't show up online
             schedule_files(page_path)
         else:
@@ -108,7 +107,7 @@ def get_page_info_list(date_format: str) -> List[Dict]:
 
     page_info_list = sorted(
         page_info_list,
-        key=lambda x: (x["post_date_struct"], x["page_name"])
+        key=lambda x: (strptime(x["Post date"], date_format), x["page_name"])
     )
     return page_info_list
 
