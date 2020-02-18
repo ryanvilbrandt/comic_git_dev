@@ -25,7 +25,9 @@ jobs:
           python src/scripts/build_site.py
       - name: Commit files
         run: |
-          git commit -am "Auto-build" --author="Github Action <action@github.com>"
+          git config --local user.name "Github Action"
+          git config --local user.email "action@github.com"
+          git commit -am "Auto-build"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
