@@ -23,3 +23,10 @@ jobs:
       - name: Run python build script
         run: |
           python src/scripts/build_site.py
+      - name: Commit files
+        run: |
+          git commit -am "Auto-build" --author="Github Action <action@github.com>"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
