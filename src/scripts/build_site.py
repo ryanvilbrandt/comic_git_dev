@@ -1,7 +1,9 @@
 import html
 import os
+import random
 import re
 import shutil
+import string
 from configparser import RawConfigParser
 from glob import glob
 from json import dumps
@@ -53,10 +55,11 @@ def setup_output_file_space():
 
 
 def read_info(filepath, to_dict=False, might_be_scheduled=True):
-    if not isfile(filepath):
-        if not isfile(filepath + ".scheduled"):
+    if might_be_scheduled and not isfile(filepath):
+        scheduled_files = glob(filepath + ".*")
+        if not scheduled_files:
             raise FileNotFoundError(filepath)
-        filepath += ".scheduled"
+        filepath = scheduled_files[0]
     with open(filepath) as f:
         info_string = f.read()
     if not re.search("^\[.*?\]", info_string):
@@ -75,14 +78,15 @@ def read_info(filepath, to_dict=False, might_be_scheduled=True):
 
 def schedule_files(folder_path):
     for filepath in glob(folder_path + "/*"):
-        if not filepath.endswith(".scheduled"):
-            os.rename(filepath, filepath + ".scheduled")
+        if not re.search(r"\.[a-z]{10}$", filepath):
+            # Add an extra extension to the filepath, a period followed by ten random lower case characters
+            os.rename(filepath, filepath + "." + "".join(random.choices(string.ascii_lowercase, k=10)))
 
 
 def unschedule_files(folder_path):
     for filepath in glob(folder_path + "/*"):
-        if filepath.endswith(".scheduled"):
-            os.rename(filepath, filepath[:-10])
+        if re.search(r"\.[a-z]{10}$", filepath):
+            os.rename(filepath, filepath[:-11])
 
 
 def get_page_info_list(date_format: str) -> List[Dict]:
