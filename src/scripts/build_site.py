@@ -5,7 +5,8 @@ import shutil
 from configparser import RawConfigParser
 from glob import glob
 from json import dumps
-from time import strptime
+from os.path import isfile
+from time import strptime, localtime
 from typing import Dict, List
 
 from jinja2 import Environment, FileSystemLoader
@@ -51,7 +52,11 @@ def setup_output_file_space():
     os.makedirs("comic", exist_ok=True)
 
 
-def read_info(filepath, to_dict=False):
+def read_info(filepath, to_dict=False, might_be_scheduled=True):
+    if not isfile(filepath):
+        if not isfile(filepath + ".scheduled"):
+            raise FileNotFoundError(filepath)
+        filepath += ".scheduled"
     with open(filepath) as f:
         info_string = f.read()
     if not re.search("^\[.*?\]", info_string):
@@ -68,17 +73,40 @@ def read_info(filepath, to_dict=False):
     return info
 
 
+def schedule_files(folder_path):
+    for filepath in glob(folder_path + "/*"):
+        print(filepath)
+        if not filepath.endswith(".scheduled"):
+            os.rename(filepath, filepath + ".scheduled")
+
+
+def unschedule_files(folder_path):
+    for filepath in glob(folder_path + "/*"):
+        print(filepath)
+        if filepath.endswith(".scheduled"):
+            os.rename(filepath, filepath[:-10])
+
+
 def get_page_info_list(date_format: str) -> List[Dict]:
+    local_time = localtime()
+    print("Local time is {}".format(local_time))
     page_info_list = []
     for page_path in glob("your_content/comics/*"):
-        page_info = read_info("{}/info.ini".format(page_path), to_dict=True)
-        page_info["page_name"] = os.path.basename(page_path)
-        page_info["Tags"] = [tag.strip() for tag in page_info["Tags"].strip().split(",")]
-        page_info_list.append(page_info)
+        page_info = read_info("{}/info.ini".format(page_path), to_dict=True, might_be_scheduled=True)
+        page_info["post_date_struct"] = strptime(page_info["Post date"], date_format)
+        if page_info["post_date_struct"] > local_time:
+            # Post date is in the future, so mark all the files as .scheduled so they don't show up online
+            schedule_files(page_path)
+        else:
+            # Post date is in the past, so publish the comic files
+            unschedule_files(page_path)
+            page_info["page_name"] = os.path.basename(page_path)
+            page_info["Tags"] = [tag.strip() for tag in page_info["Tags"].strip().split(",")]
+            page_info_list.append(page_info)
 
     page_info_list = sorted(
         page_info_list,
-        key=lambda x: (strptime(x["Post date"], date_format), x["page_name"])
+        key=lambda x: (x["post_date_struct"], x["page_name"])
     )
     return page_info_list
 
