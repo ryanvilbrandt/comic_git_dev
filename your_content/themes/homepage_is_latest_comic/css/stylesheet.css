@@ -1,7 +1,8 @@
 /*
 Change these options to customize the color scheme and a few layout options of your website.
-Most layout options are stored in src/css/advanced_stylesheet.css. I do not recommend messing with those settings
-unless you know what you're doing, or you're willing to spend a lot of time on trial and error.
+Most layout options are provided by the comic_git_engine in css/advanced_stylesheet.css.
+I do not recommend messing with those settings unless you know what you're doing, or you're
+willing to spend a lot of time on trial and error.
 
 For any colors, you can represent them in hexadecimal like this (#FF0000 = red)
 or use this list of available color names: https://www.w3schools.com/cssref/css_colors.asp

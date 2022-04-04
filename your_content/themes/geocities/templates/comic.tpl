@@ -67,7 +67,7 @@
 {%- block script %}
 {% if transcripts %}
 <script type="module">
-    import { init } from "{{ base_dir }}/src/js/transcript.js";
+    import { init } from "{{ base_dir }}/comic_git_engine/js/transcript.js";
     init();
 </script>
 {% endif %}

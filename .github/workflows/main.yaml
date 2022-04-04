@@ -25,6 +25,7 @@ jobs:
         run: |
           git fetch --all --no-tags
           git reset --hard origin/working
+          git clone --single-branch --branch ${{ secrets.ENGINE_VERSION }} https://github.com/ryanvilbrandt/comic_git_engine
           git status
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v1
@@ -33,12 +34,12 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r src/scripts/requirements.txt
-          python src/scripts/make_requirements_hooks_file.py
-          pip install -r src/scripts/requirements_hooks.txt
+          pip install -r comic_git_engine/scripts/requirements.txt
+          python comic_git_engine/scripts/make_requirements_hooks_file.py
+          pip install -r comic_git_engine/scripts/requirements_hooks.txt
       - name: Run python build script
         run: |
-          python src/scripts/build_site.py --delete-scheduled-posts
+          python comic_git_engine/scripts/build_site.py --delete-scheduled-posts
       - name: Commit files
         run: |
           git config --local user.name "Github Action"
