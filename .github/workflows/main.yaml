@@ -45,6 +45,7 @@ jobs:
           git config --local user.name "Github Action"
           git config --local user.email "action@github.com"
           git add --all
+          git add --force comic_git_engine/
           git diff-index --quiet HEAD || git commit -m "Auto-build"
       - name: Push changes
         run: |
