@@ -25,8 +25,10 @@ jobs:
         run: |
           git fetch --all --no-tags
           git reset --hard origin/working
-          git submodule add -b ${{ secrets.ENGINE_VERSION }} https://github.com/ryanvilbrandt/comic_git_engine
           git status
+      - name: Pull in comic_git_engine
+        run: |
+          git submodule add -b ${{ secrets.ENGINE_VERSION }} -f https://github.com/ryanvilbrandt/comic_git_engine
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v1
         with:
