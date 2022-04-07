@@ -28,7 +28,7 @@ jobs:
           git status
       - name: Pull in comic_git_engine
         run: |
-          sed -E "s/Engine version = (.*)/\1/" your_content/comic_info.ini | echo
+          sed -E "s/Engine version = (.*)/\1/" your_content/comic_info.ini
           git submodule add -b ${{ secrets.ENGINE_VERSION }} -f https://github.com/ryanvilbrandt/comic_git_engine
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v1
