@@ -25,7 +25,7 @@
     <meta property="og:image" content="{{ comic_url + '/your_content/images/preview_image.png' }}" />
     <meta property="og:image:width" content="100px" />
     <meta property="og:image:height" content="100px" />
-    <title>{{ page_title }} - {{ comic_title }}</title>
+    <title>{{ _title }} - {{ comic_title }}</title>
     {%- endblock %}
 </head>
 <body>
