@@ -37,4 +37,5 @@ jobs:
         run: |
           sudo chmod 744 comic_git_engine/scripts/build_site.sh
           ls -la comic_git_engine/scripts/
+          printenv
           sudo ./comic_git_engine/scripts/build_site.sh
