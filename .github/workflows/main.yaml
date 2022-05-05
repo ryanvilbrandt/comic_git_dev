@@ -35,6 +35,6 @@ jobs:
           git submodule add -f https://github.com/ryanvilbrandt/comic_git_engine
       - name: Run build_site.sh
         run: |
-          sudo chmod +X comic_git_engine/scripts/build_site.sh
+          sudo chmod 744 comic_git_engine/scripts/build_site.sh
           ls -la comic_git_engine/scripts/
           sudo ./comic_git_engine/scripts/build_site.sh
