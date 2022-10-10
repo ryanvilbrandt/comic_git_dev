@@ -32,6 +32,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Pull in comic_git_engine
         run: |
+          rm -rf comic_git_engine/
           ENGINE_VERSION=$(sed -n 's/Engine version = \(.*\)/\1/p' your_content/comic_info.ini)
           echo "Engine version: $ENGINE_VERSION"
           git submodule add -b "$ENGINE_VERSION" -f https://github.com/ryanvilbrandt/comic_git_engine
