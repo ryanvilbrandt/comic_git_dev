@@ -11,4 +11,4 @@ jobs:
   call-build-site:
     uses: ryanvilbrandt/comic_git_engine/.github/workflows/build_site.yaml@master
     with:
-      repo: ${{ github.repository }}
+      github_repository: ${{ github.repository }}
