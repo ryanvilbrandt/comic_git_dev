@@ -10,5 +10,3 @@ on:
 jobs:
   call-build-site:
     uses: ryanvilbrandt/comic_git_engine/.github/workflows/build_site.yaml@master
-    with:
-      github_repository: ${{ github.repository }}
