@@ -35,3 +35,4 @@
 
 <!-- If you want to set some information apart, you can set the class as "infobox"! That will put your content in a different block of color, which can be defined in stylesheet.css. -->
 <p class="infobox">(To edit this page when you're setting up your own website, edit the file <code>/your_content/home page.txt</code>)</p>
+
