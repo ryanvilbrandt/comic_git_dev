@@ -8,7 +8,7 @@
 <!-- Next, we separate what we want into the left and right columns. -->
     <div class="left-column">
         <a href="https://comic-git.gitbook.io/documentation">
-            <img src="your_content/images/logo.png" alt="comic_git logo: if you can draw it, you can build it!" title="Click here to go to the comic_git wiki!">
+            <img src="your_content/images/logo.png" alt="comic_git logo: if you can draw it, you can build it!" title="Click here to go to the comic_git help docs!">
         </a>
     </div>
 
