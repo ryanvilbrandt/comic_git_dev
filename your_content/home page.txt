@@ -22,8 +22,11 @@
 
         <a class="button" href="latest/#comic-page">Latest Page</a>
 
-        <p>Click <a href="comic/197/#comic-page">here</a> to go to the first page of the sample comic to see how it looks out-of-the-box.<br>
-            You can also click <a href="latest/#comic-page">here</a> to go to the latest page, which will always point to the most recently published comic.</p>
+        <p>
+            Click <a href="comic/197/#comic-page">here</a> to go to the first page of the sample comic to see how it looks out-of-the-box.<br>
+
+            You can also click <a href="latest/#comic-page">here</a> to go to the latest page, which will always point to the most recently published comic.
+        </p>
     </div>
 </div>
 <!-- That's the end of the column layout! Everything below this is just normal HTML. -->
