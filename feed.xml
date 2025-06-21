@@ -1,0 +1,149 @@
+<?xml version="1.0" ?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <atom:link href="http://ryanvilbrandt.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+        <title>comic_git Example</title>
+        <description>Explore a free webcomic-based static site generator delivered through GitHub!</description>
+        <link>http://ryanvilbrandt.github.io/comic_git_dev</link>
+        <dc:creator>Ryan Vilbrandt</dc:creator>
+        <language>en-us</language>
+        <image>
+            <title>comic_git Example</title>
+            <link>http://ryanvilbrandt.github.io/comic_git_dev</link>
+            <url>http://ryanvilbrandt.github.io/your_content/images/banner.png</url>
+            <width>100</width>
+            <height>36</height>
+        </image>
+        <item>
+            <title>Page 197</title>
+            <dc:creator>Ryan Vilbrandt</dc:creator>
+            <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
+            <link>http://ryanvilbrandt.github.io/comic/197/</link>
+            <guid isPermaLink="true">http://ryanvilbrandt.github.io/comic/197/</guid>
+            <category type="storyline">Chapter 4a</category>
+            <category type="character">Avery</category>
+            <category type="character">Belfry</category>
+            <category type="character">Cur</category>
+            <category type="character">Piper</category>
+            <category type="character">Tamberlane</category>
+            <category type="tag">Tag 1</category>
+            <category type="tag">Tag 2</category>
+            <category type="tag">Tag 3</category>
+            <description><![CDATA[<p><img src="http://ryanvilbrandt.github.io/your_content/comics/197/Page_197.png" alt_text="Tamberlane, can you sign &quot;ongoing trauma&quot;?"></p>
+
+<hr>
+
+<p>WHOOPS! Caught red-pawed! ...and poor Tamberlane is having a heck of a time today, isn't she? 🙁</p>
+
+<p>Thanks again to Chaon for letting me use Cur in his Patreon cameo!</p>
+]]></description>
+        </item>
+        <item>
+            <title>Page 198</title>
+            <dc:creator>Ryan Vilbrandt</dc:creator>
+            <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
+            <link>http://ryanvilbrandt.github.io/comic/198/</link>
+            <guid isPermaLink="true">http://ryanvilbrandt.github.io/comic/198/</guid>
+            <category type="storyline">Chapter 4a</category>
+            <category type="character">Belfry</category>
+            <category type="character">Tamberlane</category>
+            <category type="tag">Tag 1</category>
+            <category type="tag">Tag 2</category>
+            <category type="tag">Tag 3</category>
+            <description><![CDATA[<p><img src="http://ryanvilbrandt.github.io/your_content/comics/198/Page_198.png" alt_text="Sometimes I wish I could put actual sounds in comics, just to be able to get across the frantic little slapping sound of snappy, distressed signing."></p>
+
+<hr>
+
+<p>Poor sad Tamberlane. I promise the tears will stop ... soon ... probably.</p>
+]]></description>
+        </item>
+        <item>
+            <title>Page 199</title>
+            <dc:creator>Ryan Vilbrandt</dc:creator>
+            <pubDate>Wed, 11 Dec 2019 00:00:00 +0000</pubDate>
+            <link>http://ryanvilbrandt.github.io/comic/199/</link>
+            <guid isPermaLink="true">http://ryanvilbrandt.github.io/comic/199/</guid>
+            <category type="storyline">Chapter 4a</category>
+            <category type="character">Anthony</category>
+            <category type="character">Avery</category>
+            <category type="character">Belfry</category>
+            <category type="character">Piper</category>
+            <category type="character">Tamberlane</category>
+            <category type="tag">Tag 1</category>
+            <category type="tag">Tag 2</category>
+            <category type="tag">Tag 3</category>
+            <description><![CDATA[<p><img src="http://ryanvilbrandt.github.io/your_content/comics/199/Page_199.png" alt_text="&quot;Yeah, I&#x27;ll start a fight. And I&#x27;ll end it too!! From time out!!&quot;"></p>
+
+<hr>
+
+<p>Anthony has all the answers! And Piper ... well, Piper is unapologetically her.</p>
+
+<p>Saturday's my birthday! Yay! Happy birthday to me 😀 Thank you all for the wonderful birthday gift of reading my little story here. It means a lot to me!</p>
+]]></description>
+        </item>
+        <item>
+            <title>Page 200</title>
+            <dc:creator>Ryan Vilbrandt</dc:creator>
+            <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
+            <link>http://ryanvilbrandt.github.io/comic/200/</link>
+            <guid isPermaLink="true">http://ryanvilbrandt.github.io/comic/200/</guid>
+            <category type="storyline">Chapter 4b</category>
+            <category type="character">Belfry</category>
+            <category type="character">Tamberlane</category>
+            <category type="tag">Tag 1</category>
+            <category type="tag">Tag 2</category>
+            <category type="tag">Tag 3</category>
+            <description><![CDATA[<p><img src="http://ryanvilbrandt.github.io/your_content/comics/200/Page_200.png" alt_text="Sometimes you don&#x27;t need words."></p>
+
+<hr>
+
+<p><em>SOB</em> <strong>WHUMPF</strong> <s>sniffle</s></p>
+
+<p><strong>HTML!</strong></p>
+]]></description>
+        </item>
+        <item>
+            <title>Page 201</title>
+            <dc:creator>Ryan Vilbrandt</dc:creator>
+            <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
+            <link>http://ryanvilbrandt.github.io/comic/201/</link>
+            <guid isPermaLink="true">http://ryanvilbrandt.github.io/comic/201/</guid>
+            <category type="storyline">Chapter 4b</category>
+            <category type="character">Avery</category>
+            <category type="character">Belfry</category>
+            <category type="character">Tamberlane</category>
+            <category type="tag">Tag 1</category>
+            <category type="tag">Tag 2</category>
+            <category type="tag">Tag 3</category>
+            <description><![CDATA[<p><img src="http://ryanvilbrandt.github.io/your_content/comics/201/Page_201.png" alt_text="&quot;We don&#x27;t solve our problems with violence, Piper!&quot; Typical."></p>
+
+<hr>
+
+<p>Some things are not meant for kiddo ears!</p>
+]]></description>
+        </item>
+        <item>
+            <title>Page 202</title>
+            <dc:creator>Ryan Vilbrandt</dc:creator>
+            <pubDate>Mon, 21 Sep 2020 00:00:00 +0000</pubDate>
+            <link>http://ryanvilbrandt.github.io/comic/202/</link>
+            <guid isPermaLink="true">http://ryanvilbrandt.github.io/comic/202/</guid>
+            <category type="storyline">Chapter 4b</category>
+            <category type="character">Anthony</category>
+            <category type="character">Avery</category>
+            <category type="character">Belfry</category>
+            <category type="character">Tamberlane</category>
+            <category type="tag">Tag 1</category>
+            <category type="tag">Tag 2</category>
+            <category type="tag">Tag 3</category>
+            <description><![CDATA[<p><img src="http://ryanvilbrandt.github.io/your_content/comics/202/Page_202.png" alt_text="Or to beat UP a kid."></p>
+
+<hr>
+
+<p>A big thank you to the lovely Caytlin Vilbrandt for allowing me to use her web comic as the example for this project!</p>
+
+<p>If you'd like to check out more of this amazing comic (and I recommend you do), you can read more at <a href="https://www.tamberlanecomic.com/">https://www.tamberlanecomic.com/</a></p>
+]]></description>
+        </item>
+    </channel>
+</rss>
