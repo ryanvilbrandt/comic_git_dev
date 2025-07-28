@@ -11,7 +11,10 @@ or use this list of available color names: https://www.w3schools.com/cssref/css_
 /* Global values */
 body {
     font-family: 'PT Sans', sans-serif;  /* The font of all the text on all pages */
-    color: black;  /* The color of the font of most of the text on your website */
+    color: black;  /* The color of the font of all of the text on your whole website, except links.
+                      If you want to change the color of text in certain parts of the page, and not the whole site,
+                      you can define `color` in other blocks and it will only apply to that element and all
+                      of the elements it contains. */
     background-color: white;  /* The color of the background behind everything */
     background-image: url("../../../images/background_image.png");  /* The pattern on the background. Delete to change to a solid color
                                                        or replace with your own image to tile across your background. */
@@ -76,7 +79,7 @@ a.navigation-button-disabled {
     background-color: #F6FBFE;  /* The color of the "blurb" box that contains post title, post date, tags, etc. */
     width: 75%;  /* The maximum width of the blurb box. */
     border-left: 3px dotted #62C5E8;  /* If you change the background color of the blurb, play with these two lines or else it will look bad */
-    border-right: 3px dotted #62C5E8;
+    border-right: 3px dotted #62C5E8; /* You can also just delete these two lines if you don't want a dotted border on the blurb box */
 }
 
 h1#post-title {
