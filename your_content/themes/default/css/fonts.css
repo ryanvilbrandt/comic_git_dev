@@ -1,11 +1,13 @@
-/* To add your own custom fonts, go to http://fonts.google.com and browse their selection! When you find ones you like,
-you can add it to your "collection" by viewing the font, and clicking the "+ Select this style" button. */
+/*
+To add your own custom fonts, go to https://fonts.google.com and browse their selection. When you find a font you like,
+you can get the CSS code you need to use that font by clicking the Get Code button in the top-right.
 
-/* Once you've finished choosing, click the "View your selected families" button in the top left (it looks like 3
-squares and a +). Under the header "Use on the web", you'll see two options: <link> and @import. Click the @import button.
-Add everything between the <style> tags below. */
+On this new page, click the "Get embed code" button. You'll now see a new view that shows a number of ways to use your
+font, including "Web", "Android", etc. Under the "Web" tab, you'll see two radio buttons: <link> and @import.
+Click the @import button, copy the text between the <style> tags, and paste it below.
 
-/* Finally, in your stylesheet.css, you can refer to fonts by the names listed below. For example, you'd use
-font-family: 'Roboto Slab', serif to use the example font included below! */
+Finally, in your stylesheet.css (or any other CSS file), you can refer to fonts by their names.
+For example, to use the default font included in this file, you'd use `font-family: 'Roboto Slab', serif`
+*/
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');

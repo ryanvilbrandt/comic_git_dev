@@ -74,7 +74,7 @@ a.navigation-button-disabled {
     color: white;    /* Color of the words in button hyperlinks when the mouse hovers over it */
 }
 
-/* Comic page-specific styling */
+/* The blue background with the dotted borders that shows up on most pages. */
 #blurb {
     background-color: #F6FBFE;  /* The color of the "blurb" box that contains post title, post date, tags, etc. */
     width: 75%;  /* The maximum width of the blurb box. */
@@ -82,7 +82,7 @@ a.navigation-button-disabled {
     border-right: 3px dotted #62C5E8; /* You can also just delete these two lines if you don't want a dotted border on the blurb box */
 }
 
-h1#post-title {
+#post-title {
     color: black;  /* Color of the post title */
     font-size: 3em;  /* Font size of the post title */
     font-family: 'Roboto Slab', cursive;
