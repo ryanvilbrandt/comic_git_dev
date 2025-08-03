@@ -28,12 +28,12 @@
         <p>You can change what's on this page by editing the file found at <code>/your_content/home page.txt</code>.
             I've even included comments in that file to help you out, if you're new to HTML.</p>
 
-        <p>You'll probably want to have links to your <a href="comic/197/#comic-page">first</a> and
+        <p>You'll probably want to have links to your <a href="comic/001/#comic-page">first</a> and
             <a href="latest/#comic-page">last</a> comic pages on your homepage. You can use those links in the previous
             sentence, or you can use either of the buttons below.</p>
 
         <!-- If you want to make your link look like a button, add class="button" to your 'a' tag like so: -->
-        <a class="button" href="comic/197/#comic-page">First Page</a>
+        <a class="button" href="comic/001/#comic-page">First Page</a>
         <a class="button" href="latest/#comic-page">Latest Page</a>
 
         <!--
@@ -42,22 +42,8 @@
         -->
         <p class="infobox">(You will need to manually update the link to your first comic page yourself, but the
             <code>latest</code> page will automatically update to the latest comic for you!)</p>
+
+        <p>Check out the First Page above to see more of your site, and get some hints on where to go next!</p>
     </div>
 </div>
 <!-- That's the end of the column layout! Everything below this is just normal HTML. -->
-
-<h2>Helpful Tips on How To Customize Your Comic</h2>
-
-<ul>
-    <li>Make sure you read through and understand the <a href="https://comic-git.gitbook.io/documentation/basic-editing/editing-your-website">Basic Editing</a>
-        section of the documentation.</li>
-    <li>To make basic changes to the website, like changing colors and fonts, update the
-        <code>/your_content/themes/default/css/fonts.css</code> and <code>your_content/themes/default/css/stylesheet.css</code> files.</li>
-    <li>Once you're comfortable with the basic comic_git usage, make sure to check out
-        <a href="https://comic-git.gitbook.io/documentation/advanced-editing/advanced-editing-and-the-comic_git-engine">Advanced Editing</a>
-        or even <a href="https://comic-git.gitbook.io/documentation/expert-editing/expert-editing">Expert Editing</a>!</li>
-    <li>If you want your home page to be your latest comic, <a href="https://comic-git.gitbook.io/documentation/advanced-editing/themes#using-existing-themes">set your Theme</a>
-        to <code>homepage_is_latest_comic</code>.</li>
-    <li>If you ever have troubles, or your website doesn't build properly, make sure to check out the
-        <a href="https://comic-git.gitbook.io/documentation/additional-information/troubleshooting">Troubleshooting</a> page.</li>
-</ul>
