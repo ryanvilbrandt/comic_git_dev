@@ -1,6 +1,6 @@
 /*
 Change these options to customize the color scheme and a few layout options of your website.
-Most layout options are provided by the comic_git_engine in css/advanced_stylesheet.css.
+Most layout options are provided by the comic_git_engine by files in the `css/` directory.
 I do not recommend messing with those settings unless you know what you're doing, or you're
 willing to spend a lot of time on trial and error.
 
@@ -17,7 +17,7 @@ body {
                       of the elements it contains. */
     background-color: white;  /* The color of the background behind everything */
     background-image: url("../../../images/background_image.png");  /* The pattern on the background. Delete to change to a solid color
-                                                       or replace with your own image to tile across your background. */
+                                                                       or replace with your own image to tile across your background. */
 }
 
 h1, h2, h3 {
@@ -63,7 +63,7 @@ a.navigation-button-disabled {
     text-decoration: none;  /* Delete this if you want your disabled navigation links to be underlined */
 }
 
-/* Buttons: turn any link into a button by adding class="button" within the a tag */
+/* Buttons: turn any link into a button by adding class="button" within the <a> tag */
 .button {
     background-color: #2E9BC7;  /* Color of button hyperlinks */
     color: white;  /* Color of the words in button hyperlinks */
@@ -80,6 +80,17 @@ a.navigation-button-disabled {
     width: 75%;  /* The maximum width of the blurb box. */
     border-left: 3px dotted #62C5E8;  /* If you change the background color of the blurb, play with these two lines or else it will look bad */
     border-right: 3px dotted #62C5E8; /* You can also just delete these two lines if you don't want a dotted border on the blurb box */
+}
+
+/* This is just some code to make monospaced text a little more readable */
+code {
+    font-size: 120%;  /* Make the text a little bigger */
+    background-color: #F0F0F0;  /* Give it a very light gray background */
+    border: 1px solid gray;  /* Give it a gray border... */
+    border-radius: 5px;  /* ... with rounded corners. */
+    padding-left: 5px;  /* A little padding between the text and the border on the left... */
+    padding-right: 5px;  /* ... and the right. */
+    white-space: pre; /* Prevents code blocks from being word-wrapped */
 }
 
 #post-title {
