@@ -1,6 +1,12 @@
-To update this text, you can update `/your_content/comics/001/post.txt`. Make sure to read [Adding Comic Pages](https://comic-git.gitbook.io/documentation/basic-editing/adding-comic-pages) for more information on how to add comic pages to your website.
+If you'd like some ideas on what you can do next with comic_git...
 
-See below for more helpful tips on how to make the most out of your new comic_git site:
+* Try replacing the image on this page with your own comic image by replacing the file at `/your_content/comics/001/Page 1.png`.
+* Try updating the Post Date (or other data) about this comic page by updating the file at `/your_content/comics/001/info.ini`
+* Try changing this text by updating the file at `/your_content/comics/001/post.txt`
+* Try changing the English transcript below by updating the file at `/your_content/comics/001/English.txt`
+* Read through [Adding Comic Pages](https://comic-git.gitbook.io/documentation/basic-editing/adding-comic-pages) for more information on uploading comic pages to your site.
+
+For more helpful tips on how best to use comic_git:
 
 * Make sure you read through and understand the [Basic Editing](https://comic-git.gitbook.io/documentation/basic-editing/editing-your-website) section of the documentation.
 * To make basic changes to the website, like changing colors and fonts, update the `/your_content/themes/default/css/fonts.css` and `your_content/themes/default/css/stylesheet.css` files.
