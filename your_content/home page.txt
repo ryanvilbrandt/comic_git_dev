@@ -5,6 +5,8 @@
     HTML with p tags and h1 tags and such, that will also work just fine.
 -->
 
+<h1>Congratulations on your new<br>comic_git site! 🎉🎊🥳</h1>
+
 <!-- The front page uses a responsive 2-column layout. This is done by first defining what content is going to be in
      the column layout, like so. -->
 <div class="right-column-layout">
@@ -21,8 +23,6 @@
     </div>
 
     <div class="right-column">
-        <h1>Congratulations on your new<br>comic_git site! 🎉🎊🥳</h1>
-
         <p>This is your home page! It's the main landing page for anyone visiting your website, so make sure it looks good!</p>
 
         <p>You can change what's on this page by editing the file found at <code>/your_content/home page.txt</code>.
@@ -41,9 +41,9 @@
         -->
         <p class="infobox">(You will need to manually update the link to your first comic page yourself, but the
             <code>latest</code> page will always point to your newest comic!)</p>
-
-        <h2>Need some hints on where to go next?</h2>
-        <p>Check out your <a href="comic/001/#comic-page">First Page</a> for some ideas of what you can do with comic_git!</p>
     </div>
 </div>
 <!-- That's the end of the column layout! Everything below this is just normal HTML. -->
+
+<h2>Need some hints on where to go next?</h2>
+<p>Check out your <a href="comic/001/#comic-page">First Page</a> for some ideas of what you can do with comic_git!</p>
