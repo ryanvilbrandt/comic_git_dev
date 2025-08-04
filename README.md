@@ -4,7 +4,7 @@
 
 A statically-hosted web comic server core intended to be hosted on github.io
 
-To see an example of how a webpage looks, go to https://www.comic-git.com
+To see an example of how a webpage looks, go to https://www.comic-git.com/
 
 ## Quickstart
 
