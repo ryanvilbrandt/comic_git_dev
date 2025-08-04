@@ -3,7 +3,7 @@ name: Auto-build HTML files
 on:
   push:
     branches:
-      - working
+      - master
   schedule:
     - cron: '0 8 * * *'  # Runs at 8:00 AM UTC every day
 
