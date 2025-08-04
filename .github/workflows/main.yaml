@@ -9,4 +9,4 @@ on:
 
 jobs:
   call-build-site:
-    uses: ryanvilbrandt/comic_git_engine/.github/workflows/build_site.yaml@deploy_from_workflow
+    uses: ryanvilbrandt/comic_git_engine/.github/workflows/build_site.yaml@v1
