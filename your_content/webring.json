@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "name": "Our Comics Webring!",
+    "home": {
+        "name": "Home",
+        "url": "https://my.webring.com/",
+        "image": "https://my.webring.com/icon.png"
+    },
+    "members": [
+        {
+            "id": "comic_a",
+            "name": "Albert's Atrium",
+            "url": "https://comic.albert.net/",
+            "image": "https://comic.albert.net/icon.png"
+        },
+        {
+            "id": "comic_b",
+            "name": "Bertrand's Barn",
+            "url": "https://bertrand.github.io/my_barn",
+            "image": "https://bertrand.github.io/my_barn/your_content/images/webring.jpg"
+        },
+        {
+            "id": "comic_c",
+            "name": "Clara's Cliffside",
+            "url": "https://clara-is-cool.neocities.org/",
+            "image": "https://images.ctfassets.net/hrltx12pl8hq/7JnR6tVVwDyUM8Cbci3GtJ/bf74366cff2ba271471725d0b0ef418c/shutterstock_376532611-og.jpg"
+        }
+    ]
+}
