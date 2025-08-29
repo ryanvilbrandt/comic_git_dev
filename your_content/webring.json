@@ -14,16 +14,34 @@
             "image": "https://www.mothorialcomic.com/your_content/images/banner_tamberlane.gif"
         },
         {
+            "id": "kalzeria",
+            "name": "Kalzeria",
+            "url": "https://www.kalzeria.com/",
+            "image": "https://www.tamberlanecomic.com/your_content/images/banner_kalzeria.png"
+        },
+        {
             "id": "mothorial",
             "name": "Mothorial",
             "url": "https://www.mothorialcomic.com/",
             "image": "https://www.tamberlanecomic.com/your_content/images/banner_mothorial.png"
         },
         {
+            "id": "star_warriors",
+            "name": "Star Warriors",
+            "url": "https://www.starwarriorscomic.com/",
+            "image": "https://www.tamberlanecomic.com/your_content/images/banner_starwarriors.png"
+        },
+        {
             "id": "preeny",
             "name": "Preeny Has to Repeat 6th Grade",
             "url": "https://www.preenycomic.com/",
             "image": "https://www.tamberlanecomic.com/your_content/images/banner_preeny.png"
+        },
+        {
+            "id": "circus_animals",
+            "name": "Circus Animals",
+            "url": "https://www.webtoons.com/en/canvas/circus-animals/list?title_no=897068",
+            "image": "https://www.tamberlanecomic.com/your_content/images/banner_circus_animals.png"
         }
     ]
 }
