@@ -1,29 +1,29 @@
 {
     "version": 1,
-    "name": "Our Comics Webring!",
+    "name": "Foxglove Comics Webring",
     "home": {
-        "name": "Home",
-        "url": "https://my.webring.com/",
-        "image": "https://my.webring.com/icon.png"
+        "name": "Foxglove Comics",
+        "url": "https://www.foxglovecomics.com/",
+        "image": "https://images.squarespace-cdn.com/content/v1/5183522ee4b065e39b3cfffc/4ac8aebe-fd8d-4613-ade2-cf833980efea/Foxglove-v6.png?format=500w"
     },
     "members": [
         {
-            "id": "comic_a",
-            "name": "Albert's Atrium",
-            "url": "https://comic.albert.net/",
-            "image": "https://comic.albert.net/icon.png"
+            "id": "tamberlane",
+            "name": "Tamberlane",
+            "url": "https://www.tamberlanecomic.com/",
+            "image": "https://www.mothorialcomic.com/your_content/images/banner_tamberlane.gif"
         },
         {
-            "id": "comic_b",
-            "name": "Bertrand's Barn",
-            "url": "https://bertrand.github.io/my_barn",
-            "image": "https://bertrand.github.io/my_barn/your_content/images/webring.jpg"
+            "id": "mothorial",
+            "name": "Mothorial",
+            "url": "https://www.mothorialcomic.com/",
+            "image": "https://www.tamberlanecomic.com/your_content/images/banner_mothorial.png"
         },
         {
-            "id": "comic_c",
-            "name": "Clara's Cliffside",
-            "url": "https://clara-is-cool.neocities.org/",
-            "image": "https://images.ctfassets.net/hrltx12pl8hq/7JnR6tVVwDyUM8Cbci3GtJ/bf74366cff2ba271471725d0b0ef418c/shutterstock_376532611-og.jpg"
+            "id": "preeny",
+            "name": "Preeny Has to Repeat 6th Grade",
+            "url": "https://www.preenycomic.com/",
+            "image": "https://www.tamberlanecomic.com/your_content/images/banner_preeny.png"
         }
     ]
 }
