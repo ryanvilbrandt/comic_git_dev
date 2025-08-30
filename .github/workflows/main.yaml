@@ -9,4 +9,7 @@ on:
 
 jobs:
   call-build-site:
-    uses: ryanvilbrandt/comic_git_engine/.github/workflows/build_site.yaml@v1
+    uses: ryanvilbrandt/comic_git_engine/.github/workflows/build_site.yaml@master
+    env:
+      MY_ENV_VAR1: value1
+      MY_ENV_VAR2: value2
