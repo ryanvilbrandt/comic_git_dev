@@ -18,5 +18,5 @@ jobs:
     uses: comic-git/comic_git_engine/.github/workflows/build_site.yaml@v1
     with:
       env: |
-        MY_ENV_VAR1=value1
+        MY_ENV_VAR1=${{ secrets.MY_ENV_VAR1 }}
         MY_ENV_VAR2=value2
