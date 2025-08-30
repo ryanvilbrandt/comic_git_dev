@@ -19,4 +19,4 @@ jobs:
     with:
       env: |
         MY_ENV_VAR1=value1
-        MY_ENV_VAR2=value2
+        MY_ENV_VAR2=value3
