@@ -17,7 +17,8 @@ jobs:
   call-build-site:
     needs: prep-env
     uses: comic-git/comic_git_engine/.github/workflows/build_site.yaml@master
-    with:
+    secrets:
       INPUT_1: ${{ secrets.MY_ENV_VAR1 }}
       INPUT_2: ${{ secrets.MY_ENV_VAR2 }}
+    with:
       INPUT_3: PST8PDT
