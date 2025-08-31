@@ -14,35 +14,10 @@ permissions:
   id-token: write
 
 jobs:
-  # 1) Build the arbitrary env blob here (secrets allowed in a normal job)
-  prep-env:
-    runs-on: ubuntu-latest
-    outputs:
-      env_blob: ${{ steps.collect.outputs.env_blob }}
-    steps:
-      - id: collect
-        name: Compose env lines (including secrets)
-        env:
-          # 👇 Put anything you want here; secrets are allowed in env:
-          API_TOKEN: ${{ secrets.MY_ENV_VAR1 }}
-          GH_PAT: ${{ secrets.MY_ENV_VAR2 }}
-        run: |
-          {
-            echo "MY_ENV_VAR1=$MY_ENV_VAR1"
-            echo "MY_ENV_VAR2=$MY_ENV_VAR2"
-          } > env.txt
-
-          # Expose as a multi-line step output
-          {
-            echo "env_blob<<EOF"
-            cat env.txt
-            echo "EOF"
-          } >> "$GITHUB_OUTPUT"
-
-  # 2) Call your reusable workflow and feed it the prepared blob
   call-build-site:
     needs: prep-env
     uses: comic-git/comic_git_engine/.github/workflows/build_site.yaml@master
-    secrets: inherit     # pass secrets context through to the called workflow if it needs it
     with:
-      env: ${{ needs.prep-env.outputs.env_blob }}
+      INPUT_1: ${{ secrets.MY_ENV_VAR1 }}
+      INPUT_2: ${{ secrets.MY_ENV_VAR2 }}
+      INPUT_3: PST8PDT
