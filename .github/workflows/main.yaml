@@ -21,4 +21,3 @@ jobs:
       SECRET_2: ${{ secrets.MY_ENV_VAR2 }}
     with:
       INPUT_3: PST8PDT
-
