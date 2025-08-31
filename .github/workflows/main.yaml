@@ -18,8 +18,8 @@ jobs:
     uses: comic-git/comic_git_engine/.github/workflows/build_site.yaml@master
     with:
       INPUTS: |
-        TZ=PST8PDT
+        TZ: PST8PDT
     secrets:
       SECRETS: |
-        MY_ENV_VAR1=${{ secrets.MY_ENV_VAR1 }}
-        MY_ENV_VAR2=${{ secrets.MY_ENV_VAR2 }}
+        MY_ENV_VAR1: ${{ secrets.MY_ENV_VAR1 }}
+        MY_ENV_VAR2: ${{ secrets.MY_ENV_VAR2 }}
