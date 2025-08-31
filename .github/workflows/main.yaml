@@ -14,17 +14,10 @@ permissions:
   id-token: write
 
 jobs:
-  prepare-env:
-    runs-on: ubuntu-latest
-    outputs:
-      env_string: ${{ steps.set-env.outputs.env_string }}
-    steps:
-      - id: set-env
-        run: |
-          echo "env_string=MY_ENV_VAR1=${{ secrets.MY_ENV_VAR1 }}\nMY_ENV_VAR2=value2" >> $GITHUB_OUTPUT
-
   call-build-site:
-    needs: prepare-env
     uses: comic-git/comic_git_engine/.github/workflows/build_site.yaml@v1
     with:
-      env: ${{ needs.prepare-env.outputs.env_string }}
+      env: |
+        MY_ENV_VAR1=${{ secrets.MY_ENV_VAR1 }}
+        MY_ENV_VAR2=${{ secrets.MY_ENV_VAR2 }}
+    secrets: inherit
