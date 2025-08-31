@@ -23,3 +23,4 @@ jobs:
       SECRETS: |
         MY_ENV_VAR1: ${{ secrets.MY_ENV_VAR1 }}
         MY_ENV_VAR2: ${{ secrets.MY_ENV_VAR2 }}
+
