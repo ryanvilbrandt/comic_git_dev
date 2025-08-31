@@ -42,7 +42,7 @@ jobs:
   # 2) Call your reusable workflow and feed it the prepared blob
   call-build-site:
     needs: prep-env
-    uses: comic-git/comic_git_engine/.github/workflows/build_site.yaml@v1
+    uses: comic-git/comic_git_engine/.github/workflows/build_site.yaml@master
     secrets: inherit     # pass secrets context through to the called workflow if it needs it
     with:
       env: ${{ needs.prep-env.outputs.env_blob }}
