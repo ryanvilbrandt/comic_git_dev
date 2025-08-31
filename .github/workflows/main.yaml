@@ -15,9 +15,14 @@ permissions:
 
 jobs:
   call-build-site:
-    uses: comic-git/comic_git_engine/.github/workflows/build_site.yaml@v1
+    uses: ./.github/workflows/build_site.yaml
     with:
-      env: |
-        MY_ENV_VAR1=${{ secrets.MY_ENV_VAR1 }}
-        MY_ENV_VAR2=${{ secrets.MY_ENV_VAR2 }}
+      env_kv: |
+        SITE_ENV=production
+        ENGINE_VERSION=v1
+        # Any secret you choose, no need to predeclare in callee:
+        API_TOKEN=${{ secrets.MY_API_TOKEN }}
+        GH_PAT=${{ secrets.GH_PAT }}
+        # You can add/remove lines freely
+        EXTRA_FLAGS=--delete-scheduled-posts
     secrets: inherit
