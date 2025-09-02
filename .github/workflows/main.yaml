@@ -20,4 +20,4 @@ jobs:
       DEPLOY_TARGET: neocities
       OUTPUT_DIR: public
     secrets:
-      NEOCITIES_API_KEY: ${{ secrets.NEOCITIES_API_KEY }}
+      NEOCITIES_API_TOKEN: ${{ secrets.NEOCITIES_API_KEY }}
