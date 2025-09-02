@@ -15,12 +15,11 @@ permissions:
 
 jobs:
   call-build-site:
-    uses: comic-git/comic_git_engine/.github/workflows/build_site.yaml@master
+    uses: comic-git/comic_git_engine/.github/workflows/build_site.yaml@neocities
     with:
       INPUTS: |
         TZ: PST8PDT
+        GOOGLE_SPREADSHEET: abcde12345
     secrets:
       SECRETS: |
-        MY_ENV_VAR1: ${{ secrets.MY_ENV_VAR1 }}
-        MY_ENV_VAR2: ${{ secrets.MY_ENV_VAR2 }}
-
+        PATREON_API_KEY: ${{ secrets.PATREON_API_KEY }}
