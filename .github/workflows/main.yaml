@@ -18,8 +18,8 @@ jobs:
     uses: comic-git/comic_git_engine/.github/workflows/build_site.yaml@neocities
     with:
       INPUTS: |
-        TZ: PST8PDT
-        GOOGLE_SPREADSHEET: abcde12345
+        DEPLOY_TARGET: neocities
+        OUTPUT_DIR: public
     secrets:
       SECRETS: |
-        PATREON_API_KEY: ${{ secrets.PATREON_API_KEY }}
+        NEOCITIES_API_KEY: ${{ secrets.NEOCITIES_API_KEY }}
