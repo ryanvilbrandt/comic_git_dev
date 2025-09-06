@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   call-build-site:
-    uses: comic-git/comic_git_engine/.github/workflows/build_site.yaml@checkout-submodules
+    uses: comic-git/comic_git_engine/.github/workflows/build_site.yaml@master
     with:
       DEPLOY_TARGET: neocities
       OUTPUT_DIR: public
