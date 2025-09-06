@@ -15,11 +15,9 @@ permissions:
 
 jobs:
   call-build-site:
-    uses: comic-git/comic_git_engine/.github/workflows/build_site.yaml@extra_submodules
+    uses: comic-git/comic_git_engine/.github/workflows/build_site.yaml@checkout-submodules
     with:
       DEPLOY_TARGET: neocities
       OUTPUT_DIR: public
-      EXTRA_SUBMODULES: |
-        cvilbrandt/tamberlane-transcripts@master
     secrets:
       NEOCITIES_API_TOKEN: ${{ secrets.NEOCITIES_API_KEY }}
