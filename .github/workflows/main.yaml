@@ -21,3 +21,4 @@ jobs:
       OUTPUT_DIR: public
     secrets:
       NEOCITIES_API_TOKEN: ${{ secrets.NEOCITIES_API_KEY }}
+
