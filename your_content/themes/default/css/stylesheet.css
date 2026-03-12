@@ -53,13 +53,13 @@ a.link-bar-link:hover {
 /* Comic navigation buttons */
 a.navigation-button {
     color: #2E9BC7;  /* Color of the navigation bar hyperlinks */
-    font-size: 2em;  /* Size of the navigation bar hyperlinks */
+    /*font-size: 2em;  !* Size of the navigation bar hyperlinks. Uncomment to use. *!*/
     text-decoration: none;  /* Delete this if you want your navigation links to be underlined */
 }
 
 a.navigation-button-disabled {
     color: gray;  /* Color of the disabled navigation bar hyperlinks */
-    font-size: 2em;  /* Size of the disabled navigation bar hyperlinks */
+    /*font-size: 2em;  !* Size of the disabled navigation bar hyperlinks. Uncomment to use. *!*/
     text-decoration: none;  /* Delete this if you want your disabled navigation links to be underlined */
 }
 
@@ -77,7 +77,7 @@ a.navigation-button-disabled {
 /* The blue background with the dotted borders that shows up on most pages. */
 #blurb {
     background-color: #F6FBFE;  /* The color of the "blurb" box that contains post title, post date, tags, etc. */
-    width: 75%;  /* The maximum width of the blurb box. */
+    max-width: 750px;  /* The maximum width of the blurb box. */
     border-left: 3px dotted #62C5E8;  /* If you change the background color of the blurb, play with these two lines or else it will look bad */
     border-right: 3px dotted #62C5E8; /* You can also just delete these two lines if you don't want a dotted border on the blurb box */
 }
